@@ -16,6 +16,11 @@ public class 자동형변환 {
 		
 		float f1 = l1;   // f1 = 100.0f;
 
+	        System.out.println("num1 : " + num1);
+		System.out.println("d1 : " + d1);
+		System.out.println("l1 : " + l1);
+		System.out.println("f1 : " + f1);
+
 	}
 
 }
