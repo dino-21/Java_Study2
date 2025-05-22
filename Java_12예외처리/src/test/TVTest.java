@@ -26,22 +26,27 @@ public class TVTest {
 	}
 	
 	static void printAllTV(TV tv) {
-		System.out.println(tv.toString());		
-		
-		
-		//tv가 SaleTV를 참조하거나, SaleTV를 상속한 객체
-		//를 참조하니?
-		if(tv instanceof SaleTV sale) {
+		System.out.println(tv.toString());
+
+		// SaleTV 타입인지 확인 후 명시적 형변환하여 사용
+		if (tv instanceof SaleTV) {
+			SaleTV sale = (SaleTV) tv;
 			sale.play();
 			sale.sale();
 		}
 
-		if(tv instanceof RentalTV rent)
+		// RentalTV 타입인지 확인 후 명시적 형변환하여 사용
+		if (tv instanceof RentalTV) {
+			RentalTV rent = (RentalTV) tv;
 			rent.play();
+		}
 	}
 
 	static void printRentalTV(Rentable tv) {
-		if(tv instanceof RentalTV rent)
+		// RentalTV 타입인지 확인 후 형변환하여 rent() 호출
+		if (tv instanceof RentalTV) {
+			RentalTV rent = (RentalTV) tv;
 			rent.rent();
+		}
 	}
 }
