@@ -1,5 +1,6 @@
 package ex01;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class 로또 {
@@ -8,6 +9,11 @@ public class 로또 {
 		//로또 -> 5게임
 		
 		int[] lotto = new int[6];
+		//lotto = [0, 0, 0, 0, 0, 0]
+		
+		System.out.println(Arrays.toString(lotto));
+
+		
 		//(int)(Math.random()*45) +1
 		//random.nextInt(45)+1
 		
