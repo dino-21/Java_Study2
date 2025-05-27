@@ -13,6 +13,7 @@ class Box<T> {
 
 class BoxFactory{
 	//Box<? extends Number> => 와일드 카드 상한 제한
+	// Number 또는 그 하위 타입만 허용 하는 상한제한 와일드카드
 	public static void peekBox(Box<? extends Number> box) {
 		System.out.println(box);
 	}
