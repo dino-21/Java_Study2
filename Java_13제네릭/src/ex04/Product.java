@@ -17,4 +17,11 @@ public class Product<K,M> {
 	public void setModel(M model) {
 		this.model = model;
 	}
+	
+	@Override
+	public String toString() {
+		return "Product [kind=" + kind + ", model=" + model + "]";
+	}
+	
+	
 }
