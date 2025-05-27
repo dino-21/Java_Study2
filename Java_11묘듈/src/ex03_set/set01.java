@@ -13,8 +13,10 @@ public class set01 {
 		set.add(10); 
 		set.add(20);
 		set.add(30);
-		set.add(30);
+		set.add(30);//무시
 		
+		
+		//출력은 순서를 보장하지 않는 자료구조(set)
 		for(Integer num : set)
 			System.out.println(num);
 	}
