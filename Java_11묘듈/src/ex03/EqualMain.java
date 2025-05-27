@@ -16,6 +16,11 @@ class A {
 	 * 기본 자료형이나 String과 같은 클래스는 equals()와 hashCode()가 이미 적절히 구현되어 있어 중복 체크를 잘 해주지만,
 	 * 사용자가 정의한 객체는 Object 클래스의 기본 equals()와 hashCode()로는 중복 체크가 제대로 되지 않기 때문에, 
 	 * 사용자가 원하는 방식으로 재정의해야 한다. 
+	 * 
+	 * 	hashCode()는 객체를 빠르게 식별하기 위한 정수 값
+	 * 	equals()를 재정의하면 hashCode()도 같이 재정의해야 함
+	 * 
+	 * 사용자 정의 객체는 HashSet이나 HashMap에서 중복 처리를 제대로 하려면 equals()와 hashCode()를 반드시 재정의해야 한다.
 	 */
 	
 
@@ -33,12 +38,15 @@ class A {
 	public boolean equals(Object obj) {
 		System.out.println("equals........");
 		A a = (A) obj;
-		return age == a.age;
+		return age == a.age;    //오직 age만 비교
 	}
 
-	@Override
+	
+	
+	@Override // hashCode()는 원래 객체(Object)에서만 사용 가능한 메서드
 	public int hashCode() {
 		System.out.println("hashcode........");
+		// int는 hashCode()를 못 쓰니까 Integer 클래스의 정적 메서드를 써서 해시값 생성
 		return Integer.hashCode(age);
 	}
 
@@ -52,9 +60,9 @@ class A {
 public class EqualMain {
 	public static void main(String[] args) {
 		A a1 = new A("Id12367", 20);
-		A a2 = new A("Id12345", 20);
+		A a2 = new A("Id12345", 20);  // (id는 다르지만, 나이만 같아서 같은 객체로 취급)
 		A a3 = new A("Id12345", 21);
-		System.out.println(a1.equals(a2));
+		System.out.println(a1.equals(a2)); // a1과 a2는 "같은 사람"으로 간주
 
 		HashSet<A> set = new HashSet();
 		set.add(a1);
