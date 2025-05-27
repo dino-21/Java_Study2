@@ -10,7 +10,12 @@ public class GenericExample {
 		product1.setModel("스마트TV");
 		
 		Tv tv = product1.getKind();
+		System.out.println("tv :" + tv);
+		
+		
 		String tvModel = product1.getModel();
+		System.out.println("tvModel : " + tvModel);
+		
 		
 		System.out.println("-------------------");
 		Product<Car, Integer> product2 = new Product<>();
@@ -19,7 +24,10 @@ public class GenericExample {
 		product2.setModel(10);
 		
 		Car car = product2.getKind();
+		System.out.println("===");
+		System.out.println("car : " + car);
 		Integer carModel = product2.getModel();
+		System.out.println("carModel : " + carModel);
 	}
 }
 
