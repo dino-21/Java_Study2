@@ -8,7 +8,8 @@ class Box<T> {
 }
 
 class BoxFactory{
-	//제네릭메소드
+	// T extends Number는 T가 Number 클래스 또는 그 하위 클래스만 올 수 있도록 제한함
+        // 제네릭 메소드 정의: 반환 타입 앞에 <T extends Number> 를 선언해야 함
 	public static <T extends Number> Box<T> markBox(T o){  //Integer, Long, Double,.....
 		Box<T> box = new Box<T>();
 		box.setObj(o);
@@ -20,12 +21,12 @@ public class 제네릭메소드01 {
 
 	public static void main(String[] args) {
 		
-		Box<Integer> iBox = BoxFactory.markBox(new Integer(1000));
+		Box<Integer> iBox = BoxFactory.markBox(new Integer(1000)); //오토박싱
 		Box<Double> dBox = BoxFactory.markBox(new Double(15.25));
 
-		Box<Integer> i = BoxFactory.markBox(10);
+		Box<Integer> i = BoxFactory.markBox(10);  //오토박싱, 정수 10이 자동으로 Integer로 변환
 		
-		int i2 = i.getObj();
+		int i2 = i.getObj();  //언박싱, 박스에서 Integer 객체를 꺼낸 뒤, int로 자동 변환됨
 		System.out.println(i2);
 
 	}
