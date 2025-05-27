@@ -51,17 +51,22 @@ public class TestEx01 {
 
 	public static void main(String[] args) {
 		
-		Object obj = new A("홍길동", 20);		
+		Object obj = new A("홍길동", 20);
 		System.out.println(obj);
-		
+
 		System.out.println("-----------------------");
-		
+
 		A a = new C();
 		a.fa();
+		System.out.println("++++");
+		B b = (B) a;
+		b.fa();
+		System.out.println("=====");
 		
-		B b = (B)a;
-		b.fa();		
-		((B)a).fa();
+		// (1) a를 먼저 B타입으로 형변환한 뒤
+		// (2) 형변환된 결과에 대해 fa() 메서드를 호출한다
+		// a를 B로 바꾼 다음 fa() 실행하려면 괄호를 두 번 써야 함
+		((B) a).fa();
 		
 		
 
