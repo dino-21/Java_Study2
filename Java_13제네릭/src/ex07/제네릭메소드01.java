@@ -8,6 +8,14 @@ class Box<T> {
 }
 
 class BoxFactory{
+
+    /*
+	<T> 제네릭 타입 메서드
+	Box<T> 반환타입 : Box<T> Box안에 T 타입만 올수있음
+	markBox 메서드 이름
+	(T o) 매개변수 : T타입의 매개변수 o
+	*/
+	
 	//제네릭메소드
 	public static <T> Box<T> markBox(T o){
 		Box<T> box = new Box<T>();
