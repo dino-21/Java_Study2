@@ -33,17 +33,22 @@ public class TVTest {
 			SaleTV sale = (SaleTV) tv;
 			sale.play();
 			sale.sale();
+			
+			System.out.println("------");
 		}
 
 		// RentalTV 타입인지 확인 후 명시적 형변환하여 사용
 		if (tv instanceof RentalTV) {
 			RentalTV rent = (RentalTV) tv;
 			rent.play();
+			System.out.println("+++++");
 		}
 	}
 
 	static void printRentalTV(Rentable tv) {
 		// RentalTV 타입인지 확인 후 형변환하여 rent() 호출
+		// Rentable은 인터페이스이기 때문에, 객체의 구체적인 클래스 정보는 없음
+		// tv가 진짜 RentalTV 맞으면 rent() 메서드 호출 가능하게 형변환해서 사용
 		if (tv instanceof RentalTV) {
 			RentalTV rent = (RentalTV) tv;
 			rent.rent();
